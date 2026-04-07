@@ -5,12 +5,19 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gm;
-    public List<Card> deck = new List<Card>();
-    public List<Card> player_deck = new List<Card>();
-    public List<Card> ai_deck = new List<Card>();
-    public List<Card> player_hand = new List<Card>();
-    public List<Card> ai_hand = new List<Card>();
-    public List<Card> discard_pile = new List<Card>();
+    public List<Card_data> deck = new List<Card_data>();
+    public List<Card_data> player_deck = new List<Card_data>();
+    public List<Card_data> ai_deck = new List<Card_data>();
+    public List<Card_data> player_hand = new List<Card_data>();
+    public List<Card_data> ai_hand = new List<Card_data>();
+    public List<Card_data> discard_pile = new List<Card_data>();
+
+    public Canvas canvas;
+
+    public Vector3 player_hand_pos;
+    public Vector3 ai_hand_pos;
+
+    public Card blank;
 
     private void Awake()
     {
@@ -27,7 +34,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        canvas = FindAnyObjectByType<Canvas>();
+        Deal();
     }
 
     // Update is called once per frame
@@ -38,7 +46,19 @@ public class GameManager : MonoBehaviour
 
     void Deal()
     {
+        for (int i = 0; i <2; i++)
+        {
+            Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 
+            player_hand_pos.x += 300;
+            
+            top_card.data = player_deck[0];
+
+            player_hand.Add(top_card.data);
+            player_deck.RemoveAt(0);
+    
+
+        }
     }
 
     void Shuffle()
