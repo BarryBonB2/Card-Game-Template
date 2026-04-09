@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     void Deal()
     {
-        for (int i = 0; i <2; i++)
+        for (int i = 0; i <3; i++)
         {
             Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 

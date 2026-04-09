@@ -7,20 +7,16 @@ using UnityEngine.UI;
 public class Card : MonoBehaviour
 {
     public Card_data data;
-
+    public Attack_data attack_data;
     public string card_name;
-    public string description;
     public int health;
-    public int cost;
-    public int damage;
     public Sprite sprite;
+    public Sprite season_sprite;
     public TextMeshProUGUI nameText;
-    public TextMeshProUGUI descriptionText;
     public TextMeshProUGUI healthText;
-    public TextMeshProUGUI costText;
-    public TextMeshProUGUI damageText;
     public Image spriteImage;
-        
+    public Image seasonImage;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -31,12 +27,15 @@ public class Card : MonoBehaviour
         //cost = data.cost;
         //damage = data.damage;
         sprite = data.sprite;
+        season_sprite = data.Season_Sprite;
         nameText.text = card_name;
-        descriptionText.text = description;
+        //descriptionText.text = description;
         healthText.text = health.ToString();
-        costText.text = cost.ToString();
-        damageText.text = damage.ToString();
+        //costText.text = cost.ToString();
+        //damageText.text = damage.ToString();
         spriteImage.sprite = sprite;
+        seasonImage.sprite = season_sprite;
+        
 
     }
 

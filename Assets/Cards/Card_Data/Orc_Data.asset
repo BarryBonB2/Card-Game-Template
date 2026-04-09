@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Orc_Data
   m_EditorClassIdentifier: 
   card_name: Orc
-  description: Likes to swing an Axe
   health: 3
-  cost: 2
-  damage: 2
   sprite: {fileID: 21300000, guid: d5ece8b70c4be4f1a99847e09387c1e1, type: 3}
+  Season_Sprite: {fileID: -7032198521998408370, guid: 3df23418b027341059838b9b0be0ccfb, type: 3}
