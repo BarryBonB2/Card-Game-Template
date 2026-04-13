@@ -15,5 +15,15 @@ public class Card_data : ScriptableObject
     public Sprite Season_Sprite;
     public Type season;
     public Type group;
+    public string Attack_name1;
+    public string attack_description1;
+    public int damage1;
+    public string Attack_name2;
+    public string attack_description2;
+    public int damage2;
+    public int shield;
+    public Sprite shield_sprite;
+    public string runaway;
+
 
 }

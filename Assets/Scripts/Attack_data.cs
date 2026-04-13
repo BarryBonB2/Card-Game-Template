@@ -5,10 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Attack_data", menuName = "Attacks/Attack_data", order = 1)]
 public class Attack_data : ScriptableObject
 {
-    public string Attack_name;
-    public string description;
-    public int damage;
-    public Sprite sprite;
-    public int shield;
+    public string Attack_name1;
+    public string attack_description1;
+    public int damage1;
+    public string Attack_name2;
+    public string attack_description2;
+    public int damage2;
     
 }
