@@ -16,3 +16,12 @@ MonoBehaviour:
   health: 3
   sprite: {fileID: 21300000, guid: d5ece8b70c4be4f1a99847e09387c1e1, type: 3}
   Season_Sprite: {fileID: -7032198521998408370, guid: 3df23418b027341059838b9b0be0ccfb, type: 3}
+  Attack_name1: Axe throw
+  attack_description1: throw an axe
+  damage1: 2
+  Attack_name2: 
+  attack_description2: 
+  damage2: 0
+  shield: 3
+  shield_sprite: {fileID: 0}
+  runaway: Run
