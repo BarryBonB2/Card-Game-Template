@@ -290,6 +290,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &913515164 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4581742794927167067, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+  m_PrefabInstance: {fileID: 956667391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &956667391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -342,6 +353,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 913515164}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -486,16 +501,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   deck: []
   player_deck:
-  - {fileID: 11400000, guid: 33e2634b0f2e841eabb970bbf404ddca, type: 2}
-  - {fileID: 11400000, guid: 91a65ca0ff5914d0aa8577ab87713fd5, type: 2}
-  - {fileID: 11400000, guid: 33e2634b0f2e841eabb970bbf404ddca, type: 2}
-  - {fileID: 11400000, guid: 91a65ca0ff5914d0aa8577ab87713fd5, type: 2}
+  - {fileID: 11400000, guid: 33bdd79384d4b504fa9111b64a7b347a, type: 2}
+  - {fileID: 11400000, guid: 37588ad07ad41ac4e9fb43e1a37b8ad7, type: 2}
+  - {fileID: 11400000, guid: 22bbb9eef2d718044a1bbd00d4b7eb7b, type: 2}
+  - {fileID: 11400000, guid: b6fed23b83c982a4693ca8519787ac53, type: 2}
   ai_deck: []
   player_hand: []
   ai_hand: []
   discard_pile: []
   canvas: {fileID: 1888550079}
-  player_hand_pos: {x: -300, y: 0, z: 0}
+  player_hand_pos: {x: -300, y: 200, z: 0}
   ai_hand_pos: {x: 0, y: 0, z: 0}
   blank: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
 --- !u!4 &1932208467

@@ -25,3 +25,4 @@ MonoBehaviour:
   shield: 2
   shield_sprite: {fileID: 0}
   runaway: run
+  season_number: 1

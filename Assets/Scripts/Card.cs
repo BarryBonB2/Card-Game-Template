@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using JetBrains.Annotations;
 
 public class Card : MonoBehaviour
 {
@@ -20,11 +21,13 @@ public class Card : MonoBehaviour
     public int shield;
     public Sprite shield_sprite;
     public string runaway;
+    public int season_number;
     // below are physical
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI healthText;
     public Image spriteImage;
     public Image seasonImage;
+    public Image background;
     public TextMeshProUGUI attack_name1Text;
     public TextMeshProUGUI attack_desc1Text;
     public TextMeshProUGUI dmg1Text;
@@ -50,6 +53,7 @@ public class Card : MonoBehaviour
         damage2 = data.damage2;
         shield = data.shield;
         runaway = data.runaway;
+        season_number = data.season_number;
         //
         nameText.text = card_name;
         healthText.text = health.ToString();
@@ -83,6 +87,15 @@ public class Card : MonoBehaviour
             dmg2Text.text = "";
         }
 
+    
+        
+        Color32 Spring_color = new Color32(130,208,128,255);
+        Debug.Log(Spring_color);
+        if (season_number >0 && season_number <2)
+        {
+            background.color = Spring_color;
+            Debug.Log(background.color);
+        }
     }
 
     // Update is called once per frame

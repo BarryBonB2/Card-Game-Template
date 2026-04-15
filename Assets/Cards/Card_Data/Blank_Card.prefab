@@ -71,10 +71,12 @@ MonoBehaviour:
   shield: 0
   shield_sprite: {fileID: 0}
   runaway: 
+  season_number: 0
   nameText: {fileID: 7884059924108554137}
   healthText: {fileID: 3415455958271070831}
   spriteImage: {fileID: 8706265603331512291}
   seasonImage: {fileID: 2042678793434788115}
+  background: {fileID: 4581742794927167067}
   attack_name1Text: {fileID: 5894728742779797524}
   attack_desc1Text: {fileID: 3351500125829255494}
   dmg1Text: {fileID: 7930735516483787339}

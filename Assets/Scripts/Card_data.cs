@@ -24,6 +24,6 @@ public class Card_data : ScriptableObject
     public int shield;
     public Sprite shield_sprite;
     public string runaway;
-
+    public int season_number;
 
 }

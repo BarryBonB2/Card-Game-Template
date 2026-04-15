@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
         {
             Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 
-            player_hand_pos.x += 200;
+            player_hand_pos.x += 350;
             
             top_card.data = player_deck[0];
 
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
     void Shuffle()
     {   
         
-        //player_deck = player_deck.orderBy(x => random.value).Tolist();
+        //player_deck = player_deck.OrderBy(x => Random.value).ToList();
     }
 
     void AI_Turn()
