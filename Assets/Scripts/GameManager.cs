@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
         {
             Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 
-            player_hand_pos.x += 300;
+            player_hand_pos.x += 200;
             
             top_card.data = player_deck[0];
 
