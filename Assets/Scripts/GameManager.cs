@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         canvas = FindAnyObjectByType<Canvas>();
+        Shuffle();
         Deal();
     }
 
@@ -46,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     void Deal()
     {
-        for (int i = 0; i <3; i++)
+        for (int i = 0; i <4; i++)
         {
             Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 
@@ -62,8 +63,9 @@ public class GameManager : MonoBehaviour
     }
 
     void Shuffle()
-    {
-
+    {   
+        
+        //player_deck = player_deck.orderBy(x => random.value).Tolist();
     }
 
     void AI_Turn()
