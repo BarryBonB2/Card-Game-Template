@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Card_data
   card_name: Nymph
   health: 4
-  sprite: {fileID: 0}
+  sprite: {fileID: 790940699718131205, guid: 25ddd82254d794b49a18affb812bc4bf, type: 3}
   Season_Sprite: {fileID: 2836554479157175418, guid: 3932bcb593bc44d79bc06b3bbbd22341, type: 3}
   Attack_name1: shoot
   attack_description1: 
