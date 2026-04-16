@@ -132,18 +132,6 @@ PrefabInstance:
       value: Blank_Card
       objectReference: {fileID: 0}
     - target: {fileID: 970200069765969068, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 970200069765969068, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 970200069765969068, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 970200069765969068, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 784
       objectReference: {fileID: 0}
@@ -183,29 +171,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7451983828427148247, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 975.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9016892125185354829, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+    - target: {fileID: 2557723005015487775, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 171.4138
+      value: 115.7316
       objectReference: {fileID: 0}
-    - target: {fileID: 9016892125185354829, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+    - target: {fileID: 2557723005015487775, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 180.5049
+      value: 120.7208
       objectReference: {fileID: 0}
-    - target: {fileID: 9016892125185354829, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+    - target: {fileID: 2557723005015487775, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 951.15594
+      value: 1020.11945
       objectReference: {fileID: 0}
-    - target: {fileID: 9016892125185354829, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+    - target: {fileID: 2557723005015487775, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 260.56778
-      objectReference: {fileID: 0}
-    - target: {fileID: 9148944298232351882, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 1125.9987
+      value: 438.8413
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -346,7 +326,7 @@ MonoBehaviour:
   ai_hand: []
   discard_pile: []
   canvas: {fileID: 4392464444410497821}
-  player_hand_pos: {x: -300, y: 100, z: 0}
+  player_hand_pos: {x: -400, y: 100, z: 0}
   ai_hand_pos: {x: 0, y: 0, z: 0}
   blank: {fileID: 2129846076}
 --- !u!4 &622756966

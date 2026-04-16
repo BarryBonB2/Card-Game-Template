@@ -15,7 +15,7 @@ MonoBehaviour:
   card_name: Nymph
   health: 4
   sprite: {fileID: 4898517043848548473, guid: 24019fba2ac3afd4083811e35c766c78, type: 3}
-  Season_Sprite: {fileID: 8987275716240953735, guid: 4896f0735f4ee4845ab06d7d4070539f, type: 3}
+  Season_Sprite: {fileID: 4943831577944322226, guid: e373c17da6f79c542b282bacefaf4d0d, type: 3}
   Attack_name1: Impale
   attack_description1: 
   damage1: 1
@@ -25,3 +25,4 @@ MonoBehaviour:
   shield: 2
   shield_sprite: {fileID: 0}
   runaway: run
+  season_number: 2

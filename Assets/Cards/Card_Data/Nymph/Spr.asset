@@ -15,12 +15,12 @@ MonoBehaviour:
   card_name: Nymph
   health: 4
   sprite: {fileID: 790940699718131205, guid: 25ddd82254d794b49a18affb812bc4bf, type: 3}
-  Season_Sprite: {fileID: 2836554479157175418, guid: 3932bcb593bc44d79bc06b3bbbd22341, type: 3}
+  Season_Sprite: {fileID: 2983449525470498748, guid: bef8644af88dedf4cb85fdb7db2e60cd, type: 3}
   Attack_name1: shoot
   attack_description1: 
   damage1: 1
-  Attack_name2: sneak attack
-  attack_description2: TBD
+  Attack_name2: Arrow rain
+  attack_description2: opponent takes 2 dmg in two turns
   damage2: 0
   shield: 2
   shield_sprite: {fileID: 0}

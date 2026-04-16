@@ -15,13 +15,14 @@ MonoBehaviour:
   card_name: Nymph
   health: 4
   sprite: {fileID: 5538460081896273135, guid: 59146d63525e30649b024e573d440427, type: 3}
-  Season_Sprite: {fileID: -7032198521998408370, guid: 3df23418b027341059838b9b0be0ccfb, type: 3}
+  Season_Sprite: {fileID: 2687463364437052718, guid: e825167a3dfa6e642b6e516121f708e9, type: 3}
   Attack_name1: bash
   attack_description1: 
   damage1: 1
-  Attack_name2: Hunter's trap
-  attack_description2: opponent takes 2 dmg in two turns
+  Attack_name2: Sneak attack
+  attack_description2: TBD
   damage2: 0
   shield: 2
   shield_sprite: {fileID: 0}
   runaway: run
+  season_number: 3
