@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public List<Card_data> deck = new List<Card_data>();
     public List<Card_data> player_deck = new List<Card_data>();
     public List<Card_data> ai_deck = new List<Card_data>();
-    public List<Card_data> player_hand = new List<Card_data>();
+    public List<Card> player_hand = new List<Card>();
+    public List<GameObject> player_hand_object = new List<GameObject>();
     public List<Card_data> ai_hand = new List<Card_data>();
     public List<Card_data> discard_pile = new List<Card_data>();
 
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     void Deal()
     {
-        for (int i = 0; i <4; i++)
+        for (int i = 0; i <3; i++)
         {
             Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 
@@ -56,8 +57,13 @@ public class GameManager : MonoBehaviour
             
             top_card.data = player_deck[0];
 
-            player_hand.Add(top_card.data);
+            //add the card to the hand
+            player_hand.Add(top_card);
+
+            //add the card gameobject to the list of gameobjects
+            player_hand_object.Add(top_card.gameObject);
             player_deck.RemoveAt(0);
+            
     
 
         }
@@ -66,11 +72,12 @@ public class GameManager : MonoBehaviour
     void Shuffle()
     {   
         
-        //player_deck = player_deck.OrderBy(x => Random.value).ToList();
+        player_deck = player_deck.OrderBy(x => Random.value).ToList();
     }
 
     void AI_Turn()
     {
+
 
     }
 
