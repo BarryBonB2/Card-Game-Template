@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
 
     public Canvas canvas;
 
+    public GameObject Player_hand_space;
     public Vector3 player_hand_pos;
     public Vector3 ai_hand_pos;
 
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         canvas = FindAnyObjectByType<Canvas>();
+       // player_hand_pos.x = ;
         Shuffle();
         Deal();
     }

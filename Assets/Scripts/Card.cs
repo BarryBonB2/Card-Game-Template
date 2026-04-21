@@ -11,7 +11,7 @@ public class Card : MonoBehaviour
     public string card_name;
     public int health;
     public Sprite sprite;
-    public Sprite season_sprite;
+   // public Sprite season_sprite;
     public string Attack_name1;
     public string attack_description1;
     public int damage1;
@@ -36,7 +36,12 @@ public class Card : MonoBehaviour
     public TextMeshProUGUI dmg2Text;
     public TextMeshProUGUI shield_count;
     public TextMeshProUGUI run;
-    
+    public Image Player_hand_space;
+    public Sprite Autumn_sprite;
+    public Sprite Winter_sprite;
+    public Sprite Spring_sprite;
+    public Sprite Summer_sprite;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,7 +49,7 @@ public class Card : MonoBehaviour
         card_name = data.card_name;
         health = data.health;
         sprite = data.sprite;
-        season_sprite = data.Season_Sprite;
+        //season_sprite = data.Season_Sprite;
         Attack_name1 = data.Attack_name1;
         attack_description1 = data.attack_description1;
         damage1 = data.damage1;
@@ -58,7 +63,7 @@ public class Card : MonoBehaviour
         nameText.text = card_name;
         healthText.text = health.ToString();
         spriteImage.sprite = sprite;
-        seasonImage.sprite = season_sprite;
+        //seasonImage.sprite = season_sprite;
         attack_name1Text.text = Attack_name1;
         attack_desc1Text.text = attack_description1;
         dmg1Text.text = damage1.ToString();
@@ -87,29 +92,33 @@ public class Card : MonoBehaviour
             dmg2Text.text = "";
         }
 
-      // rgb(138, 192, 241);
+      // rgb(121, 174, 217);
         
         Color32 Spring_color = new Color32(72, 116, 47,255);
-        Color32 Summer_color = new (233, 224, 141,255);
+        Color32 Summer_color = new (226, 173, 67,255);
         Color32 Autumn_color = new (100, 41, 23,255);
-        Color32 winter_color = new (138, 192, 241,255);
+        Color32 winter_color = new (67, 154, 226,255);
         Debug.Log(Spring_color);
         if (season_number >0 && season_number <2)
         {
             background.color = Spring_color;
+            seasonImage.sprite = Spring_sprite;
             Debug.Log(background.color);
         }
         else if (season_number>1 && season_number<3)
         {
             background.color = Summer_color;
+            seasonImage.sprite = Summer_sprite;
         }
         else if (season_number>2 && season_number<4)
         {
             background.color = Autumn_color;
+            seasonImage.sprite = Autumn_sprite;
         }
         else if (season_number>3 && season_number<5)
         {
             background.color = winter_color;
+            seasonImage.sprite = Winter_sprite;
         }
     }
 

@@ -12,7 +12,6 @@ public class Card_data : ScriptableObject
     public string card_name;
     public int health;     
     public Sprite sprite;
-    public Sprite Season_Sprite;
     public Type season;
     public Type group;
     public string Attack_name1;

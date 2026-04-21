@@ -61,7 +61,6 @@ MonoBehaviour:
   card_name: 
   health: 0
   sprite: {fileID: 0}
-  season_sprite: {fileID: 0}
   Attack_name1: 
   attack_description1: 
   damage1: 0
@@ -85,6 +84,11 @@ MonoBehaviour:
   dmg2Text: {fileID: 1433902518907338132}
   shield_count: {fileID: 1183177141596114125}
   run: {fileID: 7053935945198044853}
+  Player_hand_space: {fileID: 0}
+  Autumn_sprite: {fileID: 2687463364437052718, guid: e825167a3dfa6e642b6e516121f708e9, type: 3}
+  Winter_sprite: {fileID: 6732177036031324604, guid: 5ae0a56da5c3366428cb8dc33432ff38, type: 3}
+  Spring_sprite: {fileID: 2983449525470498748, guid: bef8644af88dedf4cb85fdb7db2e60cd, type: 3}
+  Summer_sprite: {fileID: 4943831577944322226, guid: e373c17da6f79c542b282bacefaf4d0d, type: 3}
 --- !u!1 &355010943379961214
 GameObject:
   m_ObjectHideFlags: 0
