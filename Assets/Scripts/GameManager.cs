@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> player_hand_object = new List<GameObject>();
     public List<Card_data> ai_hand = new List<Card_data>();
     public List<Card_data> discard_pile = new List<Card_data>();
+    public List<Card> Active_player_card = new List<Card>();
+    public List<GameObject> Active_player_card_object = new List<GameObject>();
 
     public Canvas canvas;
 
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
     public Vector3 ai_hand_pos;
 
     public Card blank;
+    public Card Active_card_blank;
 
     private void Awake()
     {
@@ -48,6 +51,9 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+
+
+        
     }
 
     void Deal()
@@ -68,8 +74,9 @@ public class GameManager : MonoBehaviour
             player_deck.RemoveAt(0);
             
     
-
         }
+
+
     }
 
     void Shuffle()
