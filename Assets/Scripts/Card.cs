@@ -103,7 +103,7 @@ public class Card : MonoBehaviour
         {
             background.color = Spring_color;
             seasonImage.sprite = Spring_sprite;
-            Debug.Log(background.color);
+            //Debug.Log(background.color);
         }
         else if (season_number>1 && season_number<3)
         {

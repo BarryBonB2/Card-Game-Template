@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Unity.VisualStudio.Editor;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -25,6 +26,10 @@ public class GameManager : MonoBehaviour
 
     public Card blank;
     public Card Active_card_blank;
+
+    public TextMeshProUGUI Season_Timer;
+    public float season_count = 60;
+    
 
     private void Awake()
     {
@@ -50,9 +55,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        season_count -= Time.deltaTime;
+
+        float seconds = season_count%60;
         
 
+        Season_Timer.text = Mathf.RoundToInt (seconds).ToString();
 
+
+       if(season_count <= 0)
+        {
+            season_count=60;
+        }
         
     }
 
@@ -62,7 +76,7 @@ public class GameManager : MonoBehaviour
         {
             Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 
-            player_hand_pos.x += 350;
+            player_hand_pos.x += 200;
             
             top_card.data = player_deck[0];
 
