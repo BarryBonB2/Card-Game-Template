@@ -15,7 +15,6 @@ MonoBehaviour:
   card_name: Fleafling
   health: 2
   sprite: {fileID: 0}
-  Season_Sprite: {fileID: -7032198521998408370, guid: 3df23418b027341059838b9b0be0ccfb, type: 3}
   Attack_name1: 
   attack_description1: 
   damage1: 0
@@ -25,3 +24,4 @@ MonoBehaviour:
   shield: 1
   shield_sprite: {fileID: 0}
   runaway: run
+  season_number: 3

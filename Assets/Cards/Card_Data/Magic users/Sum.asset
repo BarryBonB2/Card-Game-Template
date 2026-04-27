@@ -15,7 +15,6 @@ MonoBehaviour:
   card_name: Warlock
   health: 3
   sprite: {fileID: 0}
-  Season_Sprite: {fileID: 8987275716240953735, guid: 4896f0735f4ee4845ab06d7d4070539f, type: 3}
   Attack_name1: Commune
   attack_description1: draw a Fleafling from your deck
   damage1: 0
@@ -25,3 +24,4 @@ MonoBehaviour:
   shield: 2
   shield_sprite: {fileID: 0}
   runaway: run
+  season_number: 2

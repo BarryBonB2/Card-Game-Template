@@ -15,7 +15,6 @@ MonoBehaviour:
   card_name: Golden Lion
   health: 6
   sprite: {fileID: 0}
-  Season_Sprite: {fileID: 8987275716240953735, guid: 4896f0735f4ee4845ab06d7d4070539f, type: 3}
   Attack_name1: Maul
   attack_description1: 
   damage1: 1
@@ -25,3 +24,4 @@ MonoBehaviour:
   shield: 2
   shield_sprite: {fileID: 0}
   runaway: run
+  season_number: 2
