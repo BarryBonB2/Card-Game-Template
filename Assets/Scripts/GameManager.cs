@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,7 +30,9 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI Season_Timer;
     public float season_count = 60;
-    
+    public int season = 1;
+    public Button Draw_pile;
+
 
     private void Awake()
     {
@@ -56,23 +59,31 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         season_count -= Time.deltaTime;
-
         float seconds = season_count%60;
-        
-
         Season_Timer.text = Mathf.RoundToInt (seconds).ToString();
 
 
        if(season_count <= 0)
         {
             season_count=60;
+            season += 1;
+
+        }
+        if(season > 3 && season_count <= 0)
+        {
+            season = 1;
         }
         
+        // if(Draw_pile.)
+        // {
+            
+        // }
+
     }
 
     void Deal()
     {
-        for (int i = 0; i <3; i++)
+        for (int i = 0; i <4; i++)
         {
             Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 
@@ -91,6 +102,22 @@ public class GameManager : MonoBehaviour
         }
 
 
+    }
+
+    void Draw()
+    {
+        Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
+
+            player_hand_pos.x += 200;
+            
+            top_card.data = player_deck[0];
+
+            //add the card to the hand
+            player_hand.Add(top_card);
+
+            //add the card gameobject to the list of gameobjects
+            player_hand_object.Add(top_card.gameObject);
+            player_deck.RemoveAt(0);
     }
 
     void Shuffle()

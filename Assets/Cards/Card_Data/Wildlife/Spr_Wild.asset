@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c025b4487bfbb41fca186c7d9d6e18a5, type: 3}
-  m_Name: Sum
+  m_Name: Spr_Wild
   m_EditorClassIdentifier: Assembly-CSharp::Card_data
-  card_name: Nymph
-  health: 4
-  sprite: {fileID: 4898517043848548473, guid: 24019fba2ac3afd4083811e35c766c78, type: 3}
-  Season_Sprite: {fileID: 4943831577944322226, guid: e373c17da6f79c542b282bacefaf4d0d, type: 3}
-  Attack_name1: Impale
+  card_name: Crystal Peacock
+  health: 6
+  sprite: {fileID: 0}
+  Attack_name1: scratch
   attack_description1: 
   damage1: 1
-  Attack_name2: Blind
-  attack_description2: Opponent cannot sheild or use ability2
+  Attack_name2: mesmerize
+  attack_description2: send the opponents card back to their hand
   damage2: 0
   shield: 2
   shield_sprite: {fileID: 0}
   runaway: run
-  season_number: 2
+  season_number: 1

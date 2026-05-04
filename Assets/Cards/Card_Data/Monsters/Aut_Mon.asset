@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c025b4487bfbb41fca186c7d9d6e18a5, type: 3}
-  m_Name: Spr
+  m_Name: Aut_Mon
   m_EditorClassIdentifier: Assembly-CSharp::Card_data
-  card_name: Crystal Peacock
-  health: 6
+  card_name: Vampyre
+  health: 5
   sprite: {fileID: 0}
-  Attack_name1: scratch
+  Attack_name1: Bite
   attack_description1: 
-  damage1: 1
-  Attack_name2: mesmerize
-  attack_description2: send the opponents card back to their hand
-  damage2: 0
-  shield: 2
+  damage1: 2
+  Attack_name2: Drain
+  attack_description2: heal 1
+  damage2: 1
+  shield: 3
   shield_sprite: {fileID: 0}
   runaway: run
-  season_number: 1
+  season_number: 3

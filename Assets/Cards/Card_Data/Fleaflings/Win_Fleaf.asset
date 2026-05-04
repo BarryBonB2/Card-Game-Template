@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c025b4487bfbb41fca186c7d9d6e18a5, type: 3}
-  m_Name: Aut
+  m_Name: Win_Fleaf
   m_EditorClassIdentifier: Assembly-CSharp::Card_data
-  card_name: Bronze bear
-  health: 6
+  card_name: Fleafling
+  health: 2
   sprite: {fileID: 0}
-  Attack_name1: Tackle
+  Attack_name1: 
   attack_description1: 
-  damage1: 1
-  Attack_name2: Bear hug
-  attack_description2: opponent cannot run or shield, +1 dmg (one turn)
+  damage1: 0
+  Attack_name2: 
+  attack_description2: 
   damage2: 0
-  shield: 2
+  shield: 1
   shield_sprite: {fileID: 0}
   runaway: run
-  season_number: 3
+  season_number: 4

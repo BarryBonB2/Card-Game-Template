@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c025b4487bfbb41fca186c7d9d6e18a5, type: 3}
-  m_Name: Aut
+  m_Name: Sum_Mon
   m_EditorClassIdentifier: Assembly-CSharp::Card_data
-  card_name: Necromancer
-  health: 3
+  card_name: werewolf
+  health: 5
   sprite: {fileID: 0}
-  Attack_name1: Commune
-  attack_description1: draw a Monster from your deck
-  damage1: 0
+  Attack_name1: Lunge
+  attack_description1: 
+  damage1: 2
   Attack_name2: 
   attack_description2: 
   damage2: 0
-  shield: 2
+  shield: 4
   shield_sprite: {fileID: 0}
   runaway: run
-  season_number: 3
+  season_number: 2

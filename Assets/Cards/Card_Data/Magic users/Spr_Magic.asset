@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c025b4487bfbb41fca186c7d9d6e18a5, type: 3}
-  m_Name: Win
+  m_Name: Spr_Magic
   m_EditorClassIdentifier: Assembly-CSharp::Card_data
-  card_name: Silver Wolf
-  health: 6
+  card_name: Witch
+  health: 3
   sprite: {fileID: 0}
-  Attack_name1: claw
-  attack_description1: 
-  damage1: 2
-  Attack_name2: pack boost
-  attack_description2: if you have another wolf in your hand, +1 dmg
+  Attack_name1: Commune
+  attack_description1: draw a nymph from your deck
+  damage1: 0
+  Attack_name2: 
+  attack_description2: 
   damage2: 0
   shield: 2
   shield_sprite: {fileID: 0}
   runaway: run
-  season_number: 4
+  season_number: 1

@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c025b4487bfbb41fca186c7d9d6e18a5, type: 3}
-  m_Name: sum
+  m_Name: Win_Mon
   m_EditorClassIdentifier: Assembly-CSharp::Card_data
-  card_name: Golden Lion
-  health: 6
+  card_name: Ghost
+  health: 5
   sprite: {fileID: 0}
-  Attack_name1: Maul
+  Attack_name1: Spook
   attack_description1: 
-  damage1: 1
-  Attack_name2: Roar
-  attack_description2: +2 dmg, -1 shield
-  damage2: 0
-  shield: 2
+  damage1: 2
+  Attack_name2: Vengeful
+  attack_description2: If your opponent attacked you this turn do +2 dmg
+  damage2: 1
+  shield: 3
   shield_sprite: {fileID: 0}
   runaway: run
-  season_number: 2
+  season_number: 4

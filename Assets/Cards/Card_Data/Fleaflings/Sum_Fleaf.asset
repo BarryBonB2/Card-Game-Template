@@ -10,19 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c025b4487bfbb41fca186c7d9d6e18a5, type: 3}
-  m_Name: Aut
+  m_Name: Sum_Fleaf
   m_EditorClassIdentifier: Assembly-CSharp::Card_data
-  card_name: Nymph
-  health: 4
-  sprite: {fileID: 5538460081896273135, guid: 59146d63525e30649b024e573d440427, type: 3}
-  Season_Sprite: {fileID: 2687463364437052718, guid: e825167a3dfa6e642b6e516121f708e9, type: 3}
-  Attack_name1: bash
+  card_name: Fleafling
+  health: 2
+  sprite: {fileID: 0}
+  Attack_name1: 
   attack_description1: 
-  damage1: 1
-  Attack_name2: Sneak attack
-  attack_description2: TBD
+  damage1: 0
+  Attack_name2: 
+  attack_description2: 
   damage2: 0
-  shield: 2
+  shield: 1
   shield_sprite: {fileID: 0}
   runaway: run
-  season_number: 3
+  season_number: 2

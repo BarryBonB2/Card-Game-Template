@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c025b4487bfbb41fca186c7d9d6e18a5, type: 3}
-  m_Name: Spr
+  m_Name: Win_Wild
   m_EditorClassIdentifier: Assembly-CSharp::Card_data
-  card_name: Skeleton
-  health: 5
+  card_name: Silver Wolf
+  health: 6
   sprite: {fileID: 0}
-  Attack_name1: bone hurl
+  Attack_name1: claw
   attack_description1: 
   damage1: 2
-  Attack_name2: Thorn armor
-  attack_description2: opponent takes the same dmg as you
+  Attack_name2: pack boost
+  attack_description2: if you have another wolf in your hand, +1 dmg
   damage2: 0
-  shield: 3
+  shield: 2
   shield_sprite: {fileID: 0}
   runaway: run
-  season_number: 1
+  season_number: 4

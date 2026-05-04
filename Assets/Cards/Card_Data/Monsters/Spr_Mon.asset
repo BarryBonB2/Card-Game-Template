@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c025b4487bfbb41fca186c7d9d6e18a5, type: 3}
-  m_Name: Sum
+  m_Name: Spr_Mon
   m_EditorClassIdentifier: Assembly-CSharp::Card_data
-  card_name: werewolf
+  card_name: Skeleton
   health: 5
   sprite: {fileID: 0}
-  Attack_name1: Lunge
+  Attack_name1: bone hurl
   attack_description1: 
   damage1: 2
-  Attack_name2: 
-  attack_description2: 
+  Attack_name2: Thorn armor
+  attack_description2: opponent takes the same dmg as you
   damage2: 0
-  shield: 4
+  shield: 3
   shield_sprite: {fileID: 0}
   runaway: run
-  season_number: 2
+  season_number: 1

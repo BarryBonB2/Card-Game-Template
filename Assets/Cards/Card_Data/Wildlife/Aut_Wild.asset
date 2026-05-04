@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c025b4487bfbb41fca186c7d9d6e18a5, type: 3}
-  m_Name: Spr
+  m_Name: Aut_Wild
   m_EditorClassIdentifier: Assembly-CSharp::Card_data
-  card_name: Witch
-  health: 3
+  card_name: Bronze bear
+  health: 6
   sprite: {fileID: 0}
-  Attack_name1: Commune
-  attack_description1: draw a nymph from your deck
-  damage1: 0
-  Attack_name2: 
-  attack_description2: 
+  Attack_name1: Tackle
+  attack_description1: 
+  damage1: 1
+  Attack_name2: Bear hug
+  attack_description2: opponent cannot run or shield, +1 dmg (one turn)
   damage2: 0
   shield: 2
   shield_sprite: {fileID: 0}
   runaway: run
-  season_number: 1
+  season_number: 3
