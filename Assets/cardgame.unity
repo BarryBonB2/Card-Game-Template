@@ -879,6 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218de228c2717429da751d6b759cf933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Onclick
+  drawable: 1
   button: {fileID: 985172291}
 --- !u!1 &1016558368 stripped
 GameObject:
@@ -908,6 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218de228c2717429da751d6b759cf933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Onclick
+  drawable: 1
   button: {fileID: 1016558370}
 --- !u!1 &1058021953
 GameObject:
@@ -1077,6 +1079,7 @@ GameObject:
   - component: {fileID: 1621618924}
   - component: {fileID: 1621618923}
   - component: {fileID: 1621618922}
+  - component: {fileID: 1621618925}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -1147,10 +1150,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1621618922}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
-        m_MethodName: set_interactable
-        m_Mode: 6
+      - m_Target: {fileID: 11500000, guid: 8ee8c48878610400591dbc552a9c8d09, type: 3}
+        m_TargetAssemblyTypeName: UnityEditor.MonoScript, UnityEditor.CoreModule
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1197,6 +1200,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621618920}
   m_CullTransparentMesh: 1
+--- !u!114 &1621618925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621618920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218de228c2717429da751d6b759cf933, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Onclick
+  drawable: 1
+  button: {fileID: 1621618922}
 --- !u!1 &1624874322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1798548122001258076, guid: 8ceba44158a6145f0b6982a1a8dff260, type: 3}
@@ -1214,6 +1231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218de228c2717429da751d6b759cf933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Onclick
+  drawable: 1
   button: {fileID: 717574782}
 --- !u!4 &1730353069 stripped
 Transform:
@@ -1366,6 +1384,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37588ad07ad41ac4e9fb43e1a37b8ad7, type: 2}
   - {fileID: 11400000, guid: 22bbb9eef2d718044a1bbd00d4b7eb7b, type: 2}
   - {fileID: 11400000, guid: b6fed23b83c982a4693ca8519787ac53, type: 2}
+  - {fileID: 11400000, guid: 222f806f3a95dc341ac754b32cfe665e, type: 2}
   ai_deck: []
   player_hand: []
   player_hand_object: []
@@ -1426,6 +1445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 218de228c2717429da751d6b759cf933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Onclick
+  drawable: 1
   button: {fileID: 1946806194}
 --- !u!1 &1959959517
 GameObject:

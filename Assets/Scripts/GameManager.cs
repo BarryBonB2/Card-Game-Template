@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,7 +32,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI Season_Timer;
     public float season_count = 60;
     public int season = 1;
-    public Button Draw_pile;
+    public Onclick Draw_pile;
 
 
     private void Awake()
@@ -74,16 +75,34 @@ public class GameManager : MonoBehaviour
             season = 1;
         }
         
-        // if(Draw_pile.)
+        //  if(Draw_pile.drawable == true)
         // {
-            
+        //     Draw();
         // }
+        
 
     }
 
+    void FixedUpdate()
+    {
+           if(Draw_pile.drawable == false)
+        {
+            Draw();
+            Debug.Log("gay");
+        }
+    }
+
+
+    // public void OnClick()
+    // {
+    //     Debug.Log("hiefw");
+    //     Draw();
+
+
+    // }
     void Deal()
     {
-        for (int i = 0; i <4; i++)
+        for (int i = 0; i <1; i++)
         {
             Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 
