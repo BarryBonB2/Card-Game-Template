@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public float season_count = 60;
     public int season = 1;
     public Onclick Draw_pile;
-
+    public bool CardActive = false;
 
     private void Awake()
     {
@@ -74,32 +74,10 @@ public class GameManager : MonoBehaviour
         {
             season = 1;
         }
-        
-        //  if(Draw_pile.drawable == true)
-        // {
-        //     Draw();
-        // }
-        
 
     }
 
-    void FixedUpdate()
-    {
-           if(Draw_pile.drawable == false)
-        {
-            Draw();
-            Debug.Log("gay");
-        }
-    }
-
-
-    // public void OnClick()
-    // {
-    //     Debug.Log("hiefw");
-    //     Draw();
-
-
-    // }
+    
     void Deal()
     {
         for (int i = 0; i <1; i++)
@@ -123,7 +101,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void Draw()
+    public void Draw()
     {
         Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 
@@ -151,7 +129,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-
+    public void Activate()
+    {
+        
+    }
 
     
 }
