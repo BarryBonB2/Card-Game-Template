@@ -209,6 +209,7 @@ GameObject:
   - component: {fileID: 136755511}
   - component: {fileID: 136755513}
   - component: {fileID: 136755512}
+  - component: {fileID: 136755514}
   m_Layer: 5
   m_Name: player hand
   m_TagString: Untagged
@@ -227,7 +228,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.46270588, y: 0.3691042, z: 0.46270588}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1971873406}
   m_Father: {fileID: 1888550080}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -273,6 +275,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136755510}
   m_CullTransparentMesh: 1
+--- !u!114 &136755514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136755510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ff659fb48204d45ac220f9acebabf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &441903427
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +777,10 @@ PrefabInstance:
       value: Blank_Card
       objectReference: {fileID: 0}
     - target: {fileID: 402276961513658576, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+      propertyPath: activeslot
+      value: 
+      objectReference: {fileID: 1058021953}
+    - target: {fileID: 402276961513658576, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1932208466}
@@ -1072,6 +1090,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 970200069765969068, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
   m_PrefabInstance: {fileID: 956667391}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1247805266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+  m_PrefabInstance: {fileID: 956667391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa534983bed543169ce438dfad802a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1450631934
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1189,6 @@ GameObject:
   - component: {fileID: 1621618924}
   - component: {fileID: 1621618923}
   - component: {fileID: 1621618922}
-  - component: {fileID: 1621618925}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -1231,7 +1259,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: 8ee8c48878610400591dbc552a9c8d09, type: 3}
+      - m_Target: {fileID: 1621618920}
         m_TargetAssemblyTypeName: UnityEditor.MonoScript, UnityEditor.CoreModule
         m_MethodName: 
         m_Mode: 1
@@ -1281,21 +1309,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1621618920}
   m_CullTransparentMesh: 1
---- !u!114 &1621618925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621618920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218de228c2717429da751d6b759cf933, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Onclick
-  gameManager: {fileID: 0}
-  drawable: 1
-  button: {fileID: 1621618922}
 --- !u!1 &1624874322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1798548122001258076, guid: 8ceba44158a6145f0b6982a1a8dff260, type: 3}
@@ -1558,7 +1571,8 @@ MonoBehaviour:
   Player_hand_space: {fileID: 136755510}
   player_hand_pos: {x: 200, y: 210, z: 0}
   ai_hand_pos: {x: 0, y: 0, z: 0}
-  blank: {fileID: 4608709814338197990, guid: 99ef4bccd68e84d9ba6e7c8051daf70b, type: 3}
+  totalcardsinhand: 0
+  blank: {fileID: 1247805266}
   Active_card_blank: {fileID: 4608709814338197990, guid: 8ceba44158a6145f0b6982a1a8dff260, type: 3}
   Season_Timer: {fileID: 707427843}
   season_count: 60
@@ -1686,6 +1700,138 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959959517}
   m_CullTransparentMesh: 1
+--- !u!1 &1971873405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1971873406}
+  - component: {fileID: 1971873407}
+  m_Layer: 0
+  m_Name: Spline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1971873406
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971873405}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -788.20154, y: -480.82422, z: 0}
+  m_LocalScale: {x: 2.1612, y: 2.709262, z: 2.1612}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 136755511}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1971873407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971873405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Splines::UnityEngine.Splines.SplineContainer
+  m_Spline:
+    m_EditModeType: 1
+    m_Knots: []
+    m_MetaData: []
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Splines:
+  - m_EditModeType: 1
+    m_Knots:
+    - Position:
+        x: 0
+        y: 0
+        z: 0
+      TangentIn:
+        x: -0
+        y: -0
+        z: -37.851192
+      TangentOut:
+        x: 0
+        y: 0
+        z: 37.851192
+      Rotation:
+        value:
+          x: -0.5440454
+          y: 0.4516798
+          z: -0.4516798
+          w: 0.5440454
+    - Position:
+        x: 372.05344
+        y: 69.62404
+        z: 0
+      TangentIn:
+        x: -0
+        y: -0
+        z: -123.1602
+      TangentOut:
+        x: 0
+        y: 0
+        z: 121.97215
+      Rotation:
+        value:
+          x: -0.4972932
+          y: 0.5026922
+          z: -0.50269216
+          w: 0.4972933
+    - Position:
+        x: 735.4039
+        y: -6.5272675
+        z: 0
+      TangentIn:
+        x: -0
+        y: -0
+        z: -37.124462
+      TangentOut:
+        x: 0
+        y: 0
+        z: 37.124462
+      Rotation:
+        value:
+          x: 0.44577906
+          y: -0.54889077
+          z: 0.5488908
+          w: -0.44577894
+    m_MetaData:
+    - Mode: 0
+      Tension: 0.5
+    - Mode: 0
+      Tension: 0.5
+    - Mode: 0
+      Tension: 0.5
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Knots:
+    m_KnotsLink: []
 --- !u!1001 &2358733227119810139
 PrefabInstance:
   m_ObjectHideFlags: 0

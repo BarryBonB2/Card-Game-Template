@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class Onclick : MonoBehaviour
 {
     public GameManager gameManager;
+    GameManager gm;
 
     public bool drawable = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -12,9 +13,10 @@ public class Onclick : MonoBehaviour
     void Start()
     {
         button.onClick.AddListener(OnButtonClicked);
+        
     }
 
-    void OnButtonClicked()
+    public void OnButtonClicked()
     {
         if (drawable == true)
         {

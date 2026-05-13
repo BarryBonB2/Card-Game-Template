@@ -109,9 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DraggableUI
   gameManager: {fileID: 0}
   Initial_transform: {x: 0, y: 0}
-  table: {fileID: 0}
   OnActive: 1
-  Activeslot: {x: 0, y: 0}
 --- !u!61 &176493843710861411
 BoxCollider2D:
   m_ObjectHideFlags: 0

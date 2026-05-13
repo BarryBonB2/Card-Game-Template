@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public GameObject Player_hand_space;
     public Vector3 player_hand_pos;
     public Vector3 ai_hand_pos;
+    public int totalcardsinhand;
 
     public Card blank;
     public Card Active_card_blank;
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
        // player_hand_pos.x = ;
         Shuffle();
         Deal();
+        
     }
 
     // Update is called once per frame
@@ -75,6 +77,11 @@ public class GameManager : MonoBehaviour
             season = 1;
         }
 
+        totalcardsinhand = player_hand.Count;
+        if (totalcardsinhand <1)
+        {
+            player_hand_pos.x = 0;
+        }
     }
 
     
@@ -115,6 +122,10 @@ public class GameManager : MonoBehaviour
             //add the card gameobject to the list of gameobjects
             player_hand_object.Add(top_card.gameObject);
             player_deck.RemoveAt(0);
+        // if (totalcardsinhand <1)
+        // {
+        //     player_hand_pos.x = 0;
+        // }
     }
 
     void Shuffle()

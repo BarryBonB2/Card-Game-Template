@@ -3,11 +3,12 @@ using UnityEngine.EventSystems;
 
 public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-    
+    public GameManager gameManager;
     private RectTransform rectTransform;
     private Canvas canvas;
     public Vector2 Initial_transform;
-
+    public Vector2 Active_transform;
+    public GameObject activeslot;
     public bool OnActive = false;
     
     void Awake()
@@ -29,10 +30,15 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnEndDrag (PointerEventData eventData)
     {
         Debug.Log(" finished dragging : " + gameObject.name);
-        if (OnActive == true)
+        if (OnActive == true && gameManager.CardActive == false)
         {
+            Debug.Log("blegh");
+            gameManager.CardActive = true;
+            transform.position = Active_transform;
+
             
         }
+        
         else 
         {
             transform.position = Initial_transform;
@@ -60,6 +66,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     void Start()
     {
         Initial_transform = transform.position;
+        Active_transform =activeslot.transform.position;
     }
 
     // Update is called once per frame
