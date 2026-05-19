@@ -4,6 +4,12 @@ using UnityEngine.Splines;
 
 public class Hand : MonoBehaviour
 {
+    [SerializeField] private int maxHandSize;
+    [SerializeField] private GameObject cardprefab;
+    [SerializeField] private SplineContainer splineContainer;
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -1,3 +1,4 @@
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -6,7 +7,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public GameManager gameManager;
     private RectTransform rectTransform;
     private Canvas canvas;
-    public Vector2 Initial_transform;
+    public Quaternion Initial_rotation;
     public Vector2 Active_transform;
     public GameObject activeslot;
     public bool OnActive = false;
@@ -20,11 +21,13 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("started draggin : " + gameObject.name);
+       // Debug.Log(gameManager.player_hand);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        
     }
 
     public void OnEndDrag (PointerEventData eventData)
@@ -35,13 +38,14 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             Debug.Log("blegh");
             gameManager.CardActive = true;
             transform.position = Active_transform;
+            transform.rotation = Initial_rotation;
 
             
         }
         
         else 
         {
-            transform.position = Initial_transform;
+            gameManager.UpdateCardPositions();
         }
 
         
@@ -65,7 +69,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Initial_transform = transform.position;
+        Initial_rotation = transform.rotation;
         Active_transform =activeslot.transform.position;
     }
 

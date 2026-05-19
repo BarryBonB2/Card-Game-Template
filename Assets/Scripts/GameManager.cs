@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using DG.Tweening;
 using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
 using Unity.Android.Gradle.Manifest;
 using UnityEngine;
+using UnityEngine.Splines;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -36,6 +39,12 @@ public class GameManager : MonoBehaviour
     public Onclick Draw_pile;
     public bool CardActive = false;
 
+    public Vector3 Offset;
+    [SerializeField] private int maxHandSize;
+    [SerializeField] private SplineContainer splineContainer;
+    [SerializeField] private Transform spawnpoint;
+    
+
     private void Awake()
     {
         if (gm != null && gm != this)
@@ -54,7 +63,7 @@ public class GameManager : MonoBehaviour
         canvas = FindAnyObjectByType<Canvas>();
        // player_hand_pos.x = ;
         Shuffle();
-        Deal();
+        Draw();
         
     }
 
@@ -84,48 +93,87 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    
-    void Deal()
+    public void UpdateCardPositions()
     {
-        for (int i = 0; i <1; i++)
+        if (player_hand.Count ==0) return;
+        float cardspacing = 1f/ maxHandSize;
+        float firstcardposition = 0.5f - (player_hand.Count - 1) * cardspacing /2;
+        Spline spline = splineContainer.Spline;
+        for (int i=0; i <player_hand.Count; i++)
         {
-            Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
+            float p =firstcardposition + i *cardspacing;
+            Vector3 splinePosition = spline.EvaluatePosition(p);
+            Vector3 forward = spline.EvaluateTangent(p);
+            Vector3 up = spline.EvaluateUpVector(p);
+            Quaternion rotation = Quaternion.LookRotation(up,Vector3.Cross(up, forward).normalized);
+            player_hand[i].transform.DOMove(splinePosition + Offset, 0.25f);
+            player_hand[i].transform.DOLocalRotateQuaternion(rotation,0.25f);
+        }
+    }    
+    // void Deal()
+    // {
+    //     for (int i = 0; i <1; i++)
+    //     {
+    //         Draw();
+    //         // Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 
-            player_hand_pos.x += 200;
+    //         // player_hand_pos.x += 200;
             
-            top_card.data = player_deck[0];
+    //         // top_card.data = player_deck[0];
 
-            //add the card to the hand
-            player_hand.Add(top_card);
+    //         // //add the card to the hand
+    //         // player_hand.Add(top_card);
 
-            //add the card gameobject to the list of gameobjects
-            player_hand_object.Add(top_card.gameObject);
-            player_deck.RemoveAt(0);
+    //         // //add the card gameobject to the list of gameobjects
+    //         // player_hand_object.Add(top_card.gameObject);
+    //         // player_deck.RemoveAt(0);
             
     
-        }
+    //     }
 
 
-    }
+    // }
 
     public void Draw()
     {
-        Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
+        if (player_hand.Count >= maxHandSize) return;
+        Card top_card = Instantiate(blank, spawnpoint.position, spawnpoint.rotation, canvas.transform);
+        top_card.data = player_deck[0];
+        player_hand.Add(top_card);
+        player_hand_object.Add(top_card.gameObject);
+        player_deck.RemoveAt(0);
+        UpdateCardPositions();
 
-            player_hand_pos.x += 200;
+
+
+
+
+
+
+
+
+
+
+
+
+        // Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
+
+        //     player_hand_pos.x += 200;
             
-            top_card.data = player_deck[0];
+        //     top_card.data = player_deck[0];
 
-            //add the card to the hand
-            player_hand.Add(top_card);
+        //     //add the card to the hand
+        //     player_hand.Add(top_card);
 
-            //add the card gameobject to the list of gameobjects
-            player_hand_object.Add(top_card.gameObject);
-            player_deck.RemoveAt(0);
-        // if (totalcardsinhand <1)
-        // {
-        //     player_hand_pos.x = 0;
-        // }
+        //     //add the card gameobject to the list of gameobjects
+        //     player_hand_object.Add(top_card.gameObject);
+        //     player_deck.RemoveAt(0);
+        // // if (totalcardsinhand <1)
+        // // {
+        // //     player_hand_pos.x = 0;
+        // // }
+        // // this supposedly works but cant test rn
+
     }
 
     void Shuffle()

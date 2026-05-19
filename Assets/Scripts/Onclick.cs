@@ -18,10 +18,10 @@ public class Onclick : MonoBehaviour
 
     public void OnButtonClicked()
     {
-        if (drawable == true)
-        {
+       // if (drawable == true)
+      //  {
             gameManager.Draw();
-        }
+        //}
         Debug.Log(button);
         drawable = false;
 
