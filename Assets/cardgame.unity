@@ -1004,7 +1004,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 405, y: 211}
+  m_AnchoredPosition: {x: 552, y: 211}
   m_SizeDelta: {x: 1892, y: 1008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1058021955
@@ -1618,6 +1618,7 @@ MonoBehaviour:
   maxHandSize: 5
   splineContainer: {fileID: 1971873407}
   spawnpoint: {fileID: 286624622}
+  activeslot: {fileID: 0}
 --- !u!4 &1932208467
 Transform:
   m_ObjectHideFlags: 0
@@ -1698,7 +1699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -405, y: -211}
+  m_AnchoredPosition: {x: -552, y: -211}
   m_SizeDelta: {x: 1892, y: 1008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959959519
