@@ -11,6 +11,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public Vector2 Active_transform;
     public GameObject activeslot;
     public bool OnActive = false;
+    public int number;
     
     void Awake()
     {
@@ -39,6 +40,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
             gameManager.CardActive = true;
             transform.position = Active_transform;
             transform.rotation = Initial_rotation;
+           // number = currentindex;
 
             
         }
@@ -46,6 +48,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         else 
         {
             gameManager.UpdateCardPositions();
+            
         }
 
         
@@ -71,6 +74,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         Initial_rotation = transform.rotation;
         Active_transform =activeslot.transform.position;
+        
     }
 
     // Update is called once per frame

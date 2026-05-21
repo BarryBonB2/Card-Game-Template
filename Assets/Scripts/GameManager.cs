@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int maxHandSize;
     [SerializeField] private SplineContainer splineContainer;
     [SerializeField] private Transform spawnpoint;
+    public GameObject activeslot;
     
 
     private void Awake()
@@ -138,8 +139,10 @@ public class GameManager : MonoBehaviour
     {
         if (player_hand.Count >= maxHandSize) return;
         Card top_card = Instantiate(blank, spawnpoint.position, spawnpoint.rotation, canvas.transform);
+      
         top_card.data = player_deck[0];
         player_hand.Add(top_card);
+        top_card.currentindex = player_hand.Count -1;
         player_hand_object.Add(top_card.gameObject);
         player_deck.RemoveAt(0);
         UpdateCardPositions();
@@ -190,7 +193,8 @@ public class GameManager : MonoBehaviour
 
     public void Activate()
     {
-        
+        Card activecard = Instantiate(blank,activeslot.transform.position, activeslot.transform.rotation,canvas.transform);
+        //activecard.data =player_hand[currentindex];
     }
 
     

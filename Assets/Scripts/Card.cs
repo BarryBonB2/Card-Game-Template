@@ -41,6 +41,7 @@ public class Card : MonoBehaviour
     public Sprite Winter_sprite;
     public Sprite Spring_sprite;
     public Sprite Summer_sprite;
+    public int currentindex = 5555;
 
 
     // Start is called before the first frame update
@@ -120,6 +121,12 @@ public class Card : MonoBehaviour
             background.color = winter_color;
             seasonImage.sprite = Winter_sprite;
         }
+
+        
+
+
+
+
     }
 
     // Update is called once per frame
