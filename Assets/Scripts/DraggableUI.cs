@@ -1,4 +1,6 @@
 using Unity.Collections;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -12,7 +14,8 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public GameObject activeslot;
     public bool OnActive = false;
     public int number;
-    
+    public Card Card;
+    public GameObject CardExist;
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -38,16 +41,18 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         {
             Debug.Log("blegh");
             gameManager.CardActive = true;
-            transform.position = Active_transform;
-            transform.rotation = Initial_rotation;
-           // number = currentindex;
-
-            
+            // transform.position = Active_transform;
+            // transform.rotation = Initial_rotation;
+            gameManager.currentindex = number;
+            gameManager.Activate();
+            Destroy(CardExist);
+            gameManager.UpdateCardPositions();
         }
         
         else 
         {
             gameManager.UpdateCardPositions();
+            Debug.Log("niffle");
             
         }
 
@@ -72,8 +77,9 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Initial_rotation = transform.rotation;
+        Initial_rotation = activeslot.transform.rotation;
         Active_transform =activeslot.transform.position;
+        number = Card.currentindex;
         
     }
 

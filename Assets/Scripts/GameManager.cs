@@ -44,6 +44,16 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SplineContainer splineContainer;
     [SerializeField] private Transform spawnpoint;
     public GameObject activeslot;
+    public int currentindex = 5555;
+
+    //whole lotta ui stuff
+
+    public TextMeshProUGUI Ability1name;
+    public TextMeshProUGUI Ability1desc;
+    public TextMeshProUGUI Ability1Dmg;
+    public TextMeshProUGUI Ability2name;
+    public TextMeshProUGUI Ability2desc;
+    public TextMeshProUGUI Ability2Dmg;
     
 
     private void Awake()
@@ -150,15 +160,6 @@ public class GameManager : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-
-
         // Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
 
         //     player_hand_pos.x += 200;
@@ -194,8 +195,43 @@ public class GameManager : MonoBehaviour
     public void Activate()
     {
         Card activecard = Instantiate(blank,activeslot.transform.position, activeslot.transform.rotation,canvas.transform);
-        //activecard.data =player_hand[currentindex];
-    }
 
+        activecard.data =player_hand[currentindex].data;
+
+        Active_player_card.Add(activecard);
+        Active_player_card_object.Add(activecard.gameObject);
+
+        player_hand.RemoveAt(currentindex);
+        player_hand_object.RemoveAt(currentindex);
+
+        activecard.currentindex = Active_player_card.Count -1;
+
+        Ability1name.text = activecard.data.Attack_name1.ToString();
+        Ability1desc.text = activecard.data.attack_description1.ToString();
+        Ability1Dmg.text = activecard.data.damage1.ToString();
+        Ability2name.text = activecard.data.Attack_name2.ToString();
+        Ability2desc.text = activecard.data.attack_description2.ToString();
+        Ability2Dmg.text = activecard.data.damage2.ToString();
+
+
+         if(activecard.data.damage1 != 0)
+        {
+            Ability1Dmg.text = Ability1Dmg.text + " Dmg";
+        }
+        else
+        {
+            Ability1Dmg.text = "";
+        }
+
+
+          if(activecard.data.damage2 != 0)
+        {
+            Ability2Dmg.text = Ability2Dmg.text + " Dmg";
+        }
+        else
+        {
+            Ability2Dmg.text = "";
+        }
+    }
     
 }
