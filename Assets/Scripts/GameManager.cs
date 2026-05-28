@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour
     public List<Card_data> ai_deck = new List<Card_data>();
     public List<Card> player_hand = new List<Card>();
     public List<GameObject> player_hand_object = new List<GameObject>();
-    public List<Card_data> ai_hand = new List<Card_data>();
+    public List<Card> ai_hand = new List<Card>();
+    public List<GameObject> ai_hand_object = new List<GameObject>();
     public List<Card_data> discard_pile = new List<Card_data>();
     public List<Card> Active_player_card = new List<Card>();
     public List<GameObject> Active_player_card_object = new List<GameObject>();
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public Card blank;
     public Card Active_card_blank;
+    public Card AI_Blank_Card;
 
     public TextMeshProUGUI Season_Timer;
     public float season_count = 60;
@@ -40,10 +42,15 @@ public class GameManager : MonoBehaviour
     public bool CardActive = false;
 
     public Vector3 Offset;
+    public Vector3 AI_Offset;
     [SerializeField] private int maxHandSize;
     [SerializeField] private SplineContainer splineContainer;
     [SerializeField] private Transform spawnpoint;
+    [SerializeField] private int AI_maxHandSize;
+    [SerializeField] private SplineContainer AI_splineContainer;
+    [SerializeField] private Transform AI_spawnpoint;
     public GameObject activeslot;
+    public GameObject Ai_activeSlot;
     public int currentindex = 5555;
 
     //whole lotta ui stuff
@@ -74,7 +81,9 @@ public class GameManager : MonoBehaviour
         canvas = FindAnyObjectByType<Canvas>();
        // player_hand_pos.x = ;
         Shuffle();
+        AI_Shuffle();
         Draw();
+        AI_Draw();
         
     }
 
@@ -121,29 +130,25 @@ public class GameManager : MonoBehaviour
             player_hand[i].transform.DOLocalRotateQuaternion(rotation,0.25f);
         }
     }    
-    // void Deal()
-    // {
-    //     for (int i = 0; i <1; i++)
-    //     {
-    //         Draw();
-    //         // Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
-
-    //         // player_hand_pos.x += 200;
-            
-    //         // top_card.data = player_deck[0];
-
-    //         // //add the card to the hand
-    //         // player_hand.Add(top_card);
-
-    //         // //add the card gameobject to the list of gameobjects
-    //         // player_hand_object.Add(top_card.gameObject);
-    //         // player_deck.RemoveAt(0);
-            
     
-    //     }
 
-
-    // }
+    public void AI_UpdateCardPositions()
+    {
+        if (ai_hand.Count ==0) return;
+        float cardspacing = 1f/ AI_maxHandSize;
+        float firstcardposition = 0.5f - (ai_hand.Count - 1) * cardspacing /2;
+        Spline spline = AI_splineContainer.Spline;
+        for (int i=0; i <ai_hand.Count; i++)
+        {
+            float p =firstcardposition + i *cardspacing;
+            Vector3 splinePosition = spline.EvaluatePosition(p);
+            Vector3 forward = spline.EvaluateTangent(p);
+            Vector3 up = spline.EvaluateUpVector(p);
+            Quaternion rotation = Quaternion.LookRotation(up,Vector3.Cross(up, forward).normalized);
+            ai_hand[i].transform.DOMove(splinePosition + Offset, 0.25f);
+            ai_hand[i].transform.DOLocalRotateQuaternion(rotation,0.25f);
+        }
+    }   
 
     public void Draw()
     {
@@ -157,33 +162,34 @@ public class GameManager : MonoBehaviour
         player_deck.RemoveAt(0);
         UpdateCardPositions();
 
+    }
 
 
-
-        // Card top_card = Instantiate(blank, player_hand_pos, Quaternion.identity, canvas.transform);
-
-        //     player_hand_pos.x += 200;
-            
-        //     top_card.data = player_deck[0];
-
-        //     //add the card to the hand
-        //     player_hand.Add(top_card);
-
-        //     //add the card gameobject to the list of gameobjects
-        //     player_hand_object.Add(top_card.gameObject);
-        //     player_deck.RemoveAt(0);
-        // // if (totalcardsinhand <1)
-        // // {
-        // //     player_hand_pos.x = 0;
-        // // }
-        // // this supposedly works but cant test rn
+public void AI_Draw()
+    {
+        if (ai_hand.Count >= AI_maxHandSize) return;
+        Card top_card = Instantiate(blank, AI_spawnpoint.position, AI_spawnpoint.rotation, canvas.transform);
+      
+        top_card.data = ai_deck[0];
+        ai_hand.Add(top_card);
+        top_card.currentindex = ai_hand.Count -1;
+        ai_hand_object.Add(top_card.gameObject);
+        ai_deck.RemoveAt(0);
+        AI_UpdateCardPositions();
 
     }
+    
 
     void Shuffle()
     {   
         
         player_deck = player_deck.OrderBy(x => Random.value).ToList();
+    }
+
+    void AI_Shuffle()
+    {   
+        
+        ai_deck = ai_deck.OrderBy(x => Random.value).ToList();
     }
 
     void AI_Turn()
@@ -194,7 +200,7 @@ public class GameManager : MonoBehaviour
 
     public void Activate()
     {
-        Card activecard = Instantiate(blank,activeslot.transform.position, activeslot.transform.rotation,canvas.transform);
+        Card activecard = Instantiate(Active_card_blank,activeslot.transform.position, activeslot.transform.rotation,canvas.transform);
 
         activecard.data =player_hand[currentindex].data;
 

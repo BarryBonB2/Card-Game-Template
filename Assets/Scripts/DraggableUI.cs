@@ -16,6 +16,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public int number;
     public Card Card;
     public GameObject CardExist;
+    public float rotationspeed = 1000f;
     void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -31,6 +32,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnDrag(PointerEventData eventData)
     {
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.identity,rotationspeed * Time.deltaTime);
         
     }
 
