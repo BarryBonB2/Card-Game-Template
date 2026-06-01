@@ -19,7 +19,9 @@ public class Onclick : MonoBehaviour
     public void OnButtonClicked()
     {
     
-         gameManager.Draw();
+         //gameManager.Draw();
+         //gameManager.AI_Draw();
+         gameManager.AI_Activate();
     
         Debug.Log(button);
         drawable = false;

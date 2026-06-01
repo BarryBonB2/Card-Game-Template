@@ -4,7 +4,7 @@ using System.Linq;
 using DG.Tweening;
 using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
-using Unity.Android.Gradle.Manifest;
+using Unity.Hierarchy;
 using UnityEngine;
 using UnityEngine.Splines;
 using UnityEngine.UI;
@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     public List<Card_data> discard_pile = new List<Card_data>();
     public List<Card> Active_player_card = new List<Card>();
     public List<GameObject> Active_player_card_object = new List<GameObject>();
+    public List<Card> Active_ai_card = new List<Card>();
+    public List<GameObject> Active_ai_card_object = new List<GameObject>();
 
     public Canvas canvas;
 
@@ -61,6 +63,17 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI Ability2name;
     public TextMeshProUGUI Ability2desc;
     public TextMeshProUGUI Ability2Dmg;
+
+
+    //AI ui stuff
+
+     public TextMeshProUGUI AI_Ability1name;
+    public TextMeshProUGUI AI_Ability1desc;
+    public TextMeshProUGUI AI_Ability1Dmg;
+    public TextMeshProUGUI AI_Ability2name;
+    public TextMeshProUGUI AI_Ability2desc;
+    public TextMeshProUGUI AI_Ability2Dmg;
+    
     
 
     private void Awake()
@@ -84,7 +97,7 @@ public class GameManager : MonoBehaviour
         AI_Shuffle();
         Draw();
         AI_Draw();
-        
+        Player_turn();
     }
 
     // Update is called once per frame
@@ -145,7 +158,7 @@ public class GameManager : MonoBehaviour
             Vector3 forward = spline.EvaluateTangent(p);
             Vector3 up = spline.EvaluateUpVector(p);
             Quaternion rotation = Quaternion.LookRotation(up,Vector3.Cross(up, forward).normalized);
-            ai_hand[i].transform.DOMove(splinePosition + Offset, 0.25f);
+            ai_hand[i].transform.DOMove(splinePosition + AI_Offset, 0.25f);
             ai_hand[i].transform.DOLocalRotateQuaternion(rotation,0.25f);
         }
     }   
@@ -194,12 +207,34 @@ public void AI_Draw()
 
     void AI_Turn()
     {
-
+        
 
     }
 
-    public void Activate()
+    void Player_turn()
     {
+        if(CardActive == false)
+        {
+            //prompt player to activate card
+            Debug.Log("place a card in the open slot");
+        }
+        
+        
+        if (CardActive == true)
+        {
+            Draw();
+            //then they need to use an ability
+            Debug.Log("select a move to use");
+        }
+
+
+        
+    }
+
+
+    public void Activate()
+    {   
+        
         Card activecard = Instantiate(Active_card_blank,activeslot.transform.position, activeslot.transform.rotation,canvas.transform);
 
         activecard.data =player_hand[currentindex].data;
@@ -238,6 +273,54 @@ public void AI_Draw()
         {
             Ability2Dmg.text = "";
         }
+        Player_turn();
     }
     
+
+        public void AI_Activate()
+    {
+        currentindex = 0;
+        
+        Card activecard = Instantiate(Active_card_blank,Ai_activeSlot.transform.position, Ai_activeSlot.transform.rotation,canvas.transform);
+
+        activecard.data =ai_hand[currentindex].data;
+
+        Active_ai_card.Add(activecard);
+        Active_ai_card_object.Add(activecard.gameObject);
+
+        ai_hand.RemoveAt(currentindex);
+        ai_hand_object.RemoveAt(currentindex);
+
+        activecard.currentindex = Active_ai_card.Count -1;
+
+        AI_Ability1name.text = activecard.data.Attack_name1.ToString();
+        AI_Ability1desc.text = activecard.data.attack_description1.ToString();
+        AI_Ability1Dmg.text = activecard.data.damage1.ToString();
+        AI_Ability2name.text = activecard.data.Attack_name2.ToString();
+        AI_Ability2desc.text = activecard.data.attack_description2.ToString();
+        AI_Ability2Dmg.text = activecard.data.damage2.ToString();
+
+
+         if(activecard.data.damage1 != 0)
+        {
+            AI_Ability1Dmg.text = AI_Ability1Dmg.text + " Dmg";
+        }
+        else
+        {
+            AI_Ability1Dmg.text = "";
+        }
+
+
+          if(activecard.data.damage2 != 0)
+        {
+            AI_Ability2Dmg.text = AI_Ability2Dmg.text + " Dmg";
+        }
+        else
+        {
+            AI_Ability2Dmg.text = "";
+        }
+        AI_Turn();
+    }
+
+
 }
