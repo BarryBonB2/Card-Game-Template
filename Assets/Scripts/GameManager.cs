@@ -36,12 +36,14 @@ public class GameManager : MonoBehaviour
     public Card blank;
     public Card Active_card_blank;
     public Card AI_Blank_Card;
+    public Card AI_Card_Back;
 
     public TextMeshProUGUI Season_Timer;
     public float season_count = 60;
     public int season = 1;
     public Onclick Draw_pile;
     public bool CardActive = false;
+    public bool AI_CardActive = false;
 
     public Vector3 Offset;
     public Vector3 AI_Offset;
@@ -181,7 +183,7 @@ public class GameManager : MonoBehaviour
 public void AI_Draw()
     {
         if (ai_hand.Count >= AI_maxHandSize) return;
-        Card top_card = Instantiate(blank, AI_spawnpoint.position, AI_spawnpoint.rotation, canvas.transform);
+        Card top_card = Instantiate(AI_Card_Back, AI_spawnpoint.position, AI_spawnpoint.rotation, canvas.transform);
       
         top_card.data = ai_deck[0];
         ai_hand.Add(top_card);
@@ -205,9 +207,22 @@ public void AI_Draw()
         ai_deck = ai_deck.OrderBy(x => Random.value).ToList();
     }
 
-    void AI_Turn()
+    public void AI_Turn()
     {
+         if(AI_CardActive == false)
+        {
+            //prompt player to activate card
+            Debug.Log("place a card in the open slot");
+            AI_Activate();
+        }
         
+        
+        if (AI_CardActive == true)
+        {
+            AI_Draw();
+            //then they need to use an ability
+            Debug.Log("select a move to use");
+        }
 
     }
 
@@ -273,6 +288,7 @@ public void AI_Draw()
         {
             Ability2Dmg.text = "";
         }
+        CardActive = true;
         Player_turn();
     }
     
@@ -281,7 +297,7 @@ public void AI_Draw()
     {
         currentindex = 0;
         
-        Card activecard = Instantiate(Active_card_blank,Ai_activeSlot.transform.position, Ai_activeSlot.transform.rotation,canvas.transform);
+        Card activecard = Instantiate(AI_Blank_Card,Ai_activeSlot.transform.position, Ai_activeSlot.transform.rotation,canvas.transform);
 
         activecard.data =ai_hand[currentindex].data;
 
@@ -319,6 +335,7 @@ public void AI_Draw()
         {
             AI_Ability2Dmg.text = "";
         }
+        AI_CardActive = true;
         AI_Turn();
     }
 

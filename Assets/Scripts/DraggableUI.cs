@@ -42,7 +42,7 @@ public class DraggableUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         if (OnActive == true && gameManager.CardActive == false)
         {
             Debug.Log("blegh");
-            gameManager.CardActive = true;
+            
             // transform.position = Active_transform;
             // transform.rotation = Initial_rotation;
             gameManager.currentindex = number;
