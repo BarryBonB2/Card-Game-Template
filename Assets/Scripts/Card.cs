@@ -100,28 +100,30 @@ public class Card : MonoBehaviour
         Color32 Autumn_color = new (100, 41, 23,255);
         Color32 winter_color = new (67, 154, 226,255);
         Debug.Log(Spring_color);
-        if (season_number >0 && season_number <2)
+        if (gameObject.CompareTag("Card"))
         {
-            background.color = Spring_color;
-            seasonImage.sprite = Spring_sprite;
-            //Debug.Log(background.color);
+            if (season_number >0 && season_number <2)
+            {
+                background.color = Spring_color;
+                seasonImage.sprite = Spring_sprite;
+                //Debug.Log(background.color);
+            }
+            else if (season_number>1 && season_number<3)
+            {
+                background.color = Summer_color;
+                seasonImage.sprite = Summer_sprite;
+            }
+            else if (season_number>2 && season_number<4)
+            {
+                background.color = Autumn_color;
+                seasonImage.sprite = Autumn_sprite;
+            }
+            else if (season_number>3 && season_number<5)
+            {
+                background.color = winter_color;
+                seasonImage.sprite = Winter_sprite;
+            }
         }
-        else if (season_number>1 && season_number<3)
-        {
-            background.color = Summer_color;
-            seasonImage.sprite = Summer_sprite;
-        }
-        else if (season_number>2 && season_number<4)
-        {
-            background.color = Autumn_color;
-            seasonImage.sprite = Autumn_sprite;
-        }
-        else if (season_number>3 && season_number<5)
-        {
-            background.color = winter_color;
-            seasonImage.sprite = Winter_sprite;
-        }
-
         
 
 

@@ -56,6 +56,10 @@ public class GameManager : MonoBehaviour
     public GameObject activeslot;
     public GameObject Ai_activeSlot;
     public int currentindex = 5555;
+    public float player_time = 15;
+    public float Ai_time = 15;
+    public bool player_turn = false;
+    public bool ai_turn = false;
 
     //whole lotta ui stuff
 
@@ -126,6 +130,19 @@ public class GameManager : MonoBehaviour
         {
             player_hand_pos.x = 0;
         }
+
+
+        //turn timing
+        if( player_turn == true)
+        {
+            player_time -= Time.deltaTime;
+        }
+
+        if( ai_turn == true)
+        {
+            Ai_time -= Time.deltaTime;
+        }
+
     }
 
     public void UpdateCardPositions()
